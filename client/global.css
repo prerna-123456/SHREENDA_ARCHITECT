@@ -1,0 +1,398 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 150 100% 50%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 150 100% 50%;
+    --secondary-foreground: 0 0% 3%;
+
+    --muted: 0 0% 40%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 150 100% 50%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 150 100% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 3%;
+
+    --sidebar-foreground: 0 0% 95%;
+
+    --sidebar-primary: 150 100% 50%;
+
+    --sidebar-primary-foreground: 0 0% 3%;
+
+    --sidebar-accent: 150 100% 50%;
+
+    --sidebar-accent-foreground: 0 0% 3%;
+
+    --sidebar-border: 0 0% 15%;
+
+    --sidebar-ring: 150 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 150 100% 50%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 150 100% 50%;
+    --secondary-foreground: 0 0% 3%;
+
+    --muted: 0 0% 40%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 150 100% 50%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 150 100% 50%;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 150 100% 50%;
+    --sidebar-primary-foreground: 0 0% 3%;
+    --sidebar-accent: 150 100% 50%;
+    --sidebar-accent-foreground: 0 0% 3%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 150 100% 50%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white;
+    background: linear-gradient(to bottom, #050505, #0a0a0a);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes imageUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-textReveal {
+  animation: textReveal 1.2s ease-out forwards;
+}
+
+.animate-imageUp {
+  animation: imageUp 1.4s ease-out forwards;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 50s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 50s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-120px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(120px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.9s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.9s ease-out forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.9s ease-out forwards;
+}
+
+@keyframes slideUpAll {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUpAll {
+  animation: slideUpAll 1s ease-out forwards;
+}
+
+@keyframes slideLeftFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideRightFade {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes scaleFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slideLeftFade {
+  animation: slideLeftFade 1s ease-out forwards;
+}
+
+.animate-slideRightFade {
+  animation: slideRightFade 1s ease-out forwards;
+}
+
+.animate-scaleFadeUp {
+  animation: scaleFadeUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+/* ================= SLIDE IN FROM LEFT ================= */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= SLIDE IN FROM RIGHT ================= */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= UTILITY CLASSES ================= */
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes slideUpTogether {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUpTogether {
+  animation: slideUpTogether 2s ease-out forwards;
+}
+
+@keyframes slideInTogether {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(60px); /* chhota aur neeche se start */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-slideInTogether {
+  animation: slideInTogether 1s ease-out forwards;
+}
+
+/* LEFT SIDE */
+@keyframes leftLayer1 {
+  0%, 100% {
+    transform: translate(-6px, -50%);
+  }
+  50% {
+    transform: translate(-12px, -50%);
+  }
+}
+
+@keyframes leftLayer2 {
+  0%, 100% {
+    transform: translate(-12px, -50%);
+  }
+  50% {
+    transform: translate(-20px, -50%);
+  }
+}
+
+/* RIGHT SIDE */
+@keyframes rightLayer1 {
+  0%, 100% {
+    transform: translate(6px, -50%);
+  }
+  50% {
+    transform: translate(12px, -50%);
+  }
+}
+
+@keyframes rightLayer2 {
+  0%, 100% {
+    transform: translate(12px, -50%);
+  }
+  50% {
+    transform: translate(20px, -50%);
+  }
+}
+
+/* Animations */
+.animate-leftLayer1 {
+  animation: leftLayer1 2s ease-in-out infinite;
+}
+
+.animate-leftLayer2 {
+  animation: leftLayer2 2.6s ease-in-out infinite;
+}
+
+.animate-rightLayer1 {
+  animation: rightLayer1 2s ease-in-out infinite;
+}
+
+.animate-rightLayer2 {
+  animation: rightLayer2 2.6s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+.text-mask {
+  background-image: url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
