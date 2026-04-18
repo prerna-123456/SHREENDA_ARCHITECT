@@ -74,10 +74,10 @@ export default function OurServices() {
   ];
 
   const visualizationProjects = [
-    { image: "/viz1.png", alt: "Modern tower building visualization" },
-    { image: "/viz2.png", alt: "Luxury villa with pool visualization" },
+    { image: "/viz1.jpg", alt: "Modern tower building visualization" },
+    { image: "/viz2.jpg", alt: "Luxury villa with pool visualization" },
     { image: "/viz3.png", alt: "Contemporary house with solar panels" },
-    { image: "/viz4.png", alt: "Modern house with pool side view" },
+    { image: "/viz4.jpg", alt: "Modern house with pool side view" },
   ];
 
   {/* Crafted Works */ }
